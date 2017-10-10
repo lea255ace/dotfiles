@@ -1,0 +1,23 @@
+[user]
+	name = Mick Wollman
+[core]
+	editor = vim
+[color]
+	ui = auto
+[fetch]
+	prune = true
+[gui]
+	commitMsgWidth = 80
+	matchTrackingBranch = true
+[status]
+	relativePaths = false
+[push]
+	default = simple
+[alias]
+	root = rev-parse --show-toplevel
+	please = push --force-with-lease
+	commend = commit --amend --no-edit
+	stsh = stash --keep-index
+	staash = stash --include-untracked
+	st = status --short --branch
+	grog = log --graph --decorate --date=local --format=format:\"%C(bold blue)%h%C(reset) -- %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(dim white) %m %an%C(reset) %C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
