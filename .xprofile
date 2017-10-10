@@ -1,0 +1,3 @@
+# Output names taken from output of $ xrandr
+xrandr --output DFP1 --size 3840x2160 --pos 0x1290
+xrandr --output DFP2 --rotate left --size 2160x3840 --pos 3840x0

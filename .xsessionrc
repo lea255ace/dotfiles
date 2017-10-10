@@ -1,0 +1,9 @@
+#!/bin/bash
+
+xrdb -merge .Xresources
+
+xsetroot -solid midnightblue
+
+xscreensaver -no-splash &
+
+numlockx on &

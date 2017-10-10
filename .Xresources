@@ -1,0 +1,48 @@
+! Use a nice truetype font and size
+xterm*faceName: Astro
+xterm*faceSize: 16
+!xterm*scaleHeight: 1.01
+xterm*allowBoldFonts: false
+
+! Every shell is a login shell by default (for inclusion of all necessary environment variables)
+!xterm*loginshell: true
+
+xterm*visualBell: false
+
+! I like a LOT of scrollback...
+xterm*savelines: 8192
+
+! double-click to select whole URLs :D
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+xterm*eightBitInput:  true
+
+! colours...
+xterm*foreground:     white
+xterm*background:     black
+xterm*cursorColor:    white
+xterm*highlightColor: white
+
+xterm*color0:   rgb:00/00/00
+xterm*color1:   rgb:a8/00/00
+xterm*color2:   rgb:00/a8/00
+xterm*color3:   rgb:a8/a8/00
+xterm*color4:   rgb:00/54/ff
+xterm*color5:   rgb:a8/00/a8
+xterm*color6:   rgb:00/54/a8
+xterm*color7:   rgb:a8/a8/a8
+xterm*color8:   rgb:54/54/54
+xterm*color9:   rgb:ff/00/00
+xterm*color10:  rgb:00/ff/00
+xterm*color11:  rgb:ff/ff/00
+xterm*color12:  rgb:00/80/ff
+xterm*color13:  rgb:ff/00/ff
+xterm*color14:  rgb:00/ff/ff
+xterm*color15:  rgb:ff/ff/ff
+
+! right hand side scrollbar...
+xterm*rightScrollBar: true
+xterm*ScrollBar: false
+
+! stop output to terminal from jumping down to bottom of scroll again
+xterm*scrollTtyOutput: true
