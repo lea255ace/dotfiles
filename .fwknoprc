@@ -1,0 +1,4 @@
+[yuki]
+ACCESS  tcp/40022
+SPA_SERVER_PORT 62201
+SPA_SERVER  marla.thumperjumper.org
