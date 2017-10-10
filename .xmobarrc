@@ -1,0 +1,21 @@
+Config { 
+    font = "-misc-fixed-medium-r-*-*-18-*-*-*-*-*-*-*"
+    , bgColor = "black"
+    , fgColor = "grey"
+    , position = Top
+    , lowerOnStart = True
+    , commands = [ 
+        Run Weather "KDEN" ["-t","DEN: <tempC>°C | <rh>%","-L","15","-H","26","--normal","green","--high","red","--low","lightblue"] 9000
+      , Run Network "eth0" ["--template","<dev>: <rx> KB | <tx> KB","-L","5120","-H","307200","--normal","green","--high","red","--align","l","--padchars"," ","--minwidth","5"] 10
+      , Run MultiCpu ["--template","CPU: <total0>% <total1>% <total2>% <total3>% <total4>% <total5>% <total6>% <total7>%","-L","20","-H","50","--normal","green","--high","red","--align","l","--padchars"," ","--minwidth","3"] 10
+      , Run ThermalZone 0 ["--template","<temp>°C","-L","25","-H","50","--high","red","--low","lightblue","--align","l","--padchars"," ","--minwidth","3"] 10
+      , Run ThermalZone 1 ["--template","<temp>°C","-L","25","-H","50","--high","red","--low","lightblue","--align","l","--padchars"," ","--minwidth","3"] 10
+      , Run Memory ["-t","Mem: <usedratio>%","--align","l","--padchars"," ","--minwidth","3"] 10
+      , Run Swap ["--align","l","--padchars"," ","--minwidth","3"] 10
+      , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+      , Run StdinReader
+    ]
+    , sepChar = "%"
+    , alignSep = "}{"
+    , template = "%StdinReader% }{<fc=#ffff66>[</fc> %multicpu% | %thermal0% %thermal1% <fc=#ffff66>][</fc> %memory% * %swap% <fc=#ffff66>][</fc> %eth0% <fc=#ffff66>][</fc> %KDEN% <fc=#ffff66>][</fc> <fc=#ee9a00>%date%</fc>"
+}
