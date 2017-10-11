@@ -1,0 +1,37 @@
+#!/bin/bash
+
+USAGE="Usage prune [-f]"
+FORCE=0
+
+if [[ $# -gt 1 ]]; then
+  echo $USAGE
+  exit
+fi
+
+if [[ $# -eq 1 ]]; then
+  if [[ "$1" == "-f" ]]; then
+    FORCE=1
+  else
+    echo $USAGE
+    exit
+  fi
+fi
+  
+
+LOC_BRANCHES="$(git branch)"
+
+while read -r branch; do
+  echo $branch | egrep "^[^ ]*$" > /dev/null
+  if [ $? -ne 0 ]; then
+    continue
+  fi
+  git branch -a | egrep "remotes/origin/$branch$" >/dev/null
+  if [[ $? -ne 0 ]]; then
+    if [[ $FORCE -eq 1 ]]; then
+      echo "Deleting branch: $branch"
+      git branch -D $branch >/dev/null
+    else
+      echo "Would delete branch: $branch"
+    fi
+  fi
+done <<< "${LOC_BRANCHES}"

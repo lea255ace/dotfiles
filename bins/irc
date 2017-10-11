@@ -1,0 +1,2 @@
+#!/bin/bash
+xterm -xrm xterm*eightBitInput:false -T irc -e ssh golemirc
