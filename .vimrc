@@ -90,7 +90,7 @@ augroup END
 syntax enable
 
 " Set the colorscheme
-colorscheme mick
+colorscheme leef
 
 " Set an orange color column at 81 characters
 highlight ColorColumn ctermbg=DarkYellow
