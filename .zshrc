@@ -11,3 +11,5 @@ bindkey '^P' up-history
 bindkey '^N' down-history
 bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-search-forward
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
