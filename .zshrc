@@ -4,6 +4,7 @@ export TERM=xterm-256color
 [[ -r "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]] && . "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 setopt CSH_NULL_GLOB
+setopt NO_HIST_VERIFY
 
 # vi mode settings
 export KEYTIMEOUT=20
