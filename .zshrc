@@ -6,6 +6,11 @@ export TERM=xterm-256color
 setopt CSH_NULL_GLOB
 setopt NO_HIST_VERIFY
 
+# Customize git aliases
+alias gl='git grog'
+alias gla='git grog --all'
+alias gst='git st'
+
 # vi mode settings
 export KEYTIMEOUT=20
 bindkey '^P' up-history
