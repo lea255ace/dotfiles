@@ -17,7 +17,8 @@ main = do
         , focusFollowsMouse   = False
         , manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts $ layoutHook defaultConfig
-        , logHook = dynamicLogWithPP $ xmobarPP
+        , handleEventHook = handleEventHook defaultConfig <+> docksEventHook
+        , logHook = dynamicLogWithPP $ xmobarPP -- TODO: configure this to give a more useful window list
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         , ppHiddenNoWindows = xmobarColor "grey" ""
@@ -28,9 +29,9 @@ main = do
 
 myWorkspaces = ["main","chat","mail","web","work","6","music","admin","hide"]
 
-myKeys = [
+myKeys = [ -- TODO: add bindings to cycle workspaces with CycleWS
         ((mod4Mask .|. shiftMask, xK_l), spawn "xscreensaver-command -lock")
-      , ((mod4Mask,               xK_p), spawn "dmenu_run -fn '-misc-fixed-medium-r-normal--18-*-*-*-*-*-*-*'")
+      , ((mod4Mask,               xK_p), spawn "dmenu_run -fn 'Astro-16'")
       , ((0, xK_Print), spawn "rhythmbox-client --no-start --previous")
       , ((0, xK_Scroll_Lock),  spawn "rhythmbox-client --no-start --play-pause")
       , ((0, xK_Pause), spawn "rhythmbox-client --no-start --next")
@@ -38,7 +39,7 @@ myKeys = [
     [
       ((m .|. mod4Mask, k), windows $ f i)
           | (i, k) <- zip myWorkspaces [xK_1 ..xK_9]
-          , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
+          , (f, m) <- [(W.view, 0), (W.shift, shiftMask)] -- TODO: try replacing view w/ greedyView
     ] ++
     [
       ((m .|. mod4Mask, key), screenWorkspace sc >>= flip whenJust (windows . f))
