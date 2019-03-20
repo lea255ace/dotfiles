@@ -1,6 +1,6 @@
 ! Use a nice truetype font and size
 xterm*faceName: Astro
-xterm*faceSize: 16
+xterm*faceSize: 11
 !xterm*scaleHeight: 1.01
 xterm*allowBoldFonts: false
 
@@ -46,3 +46,5 @@ xterm*ScrollBar: false
 
 ! stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: true
+
+Xcursor.size: 128
