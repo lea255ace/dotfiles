@@ -8,5 +8,6 @@ alias miniterm='python3 -m serial.tools.miniterm'
 alias gl='git grog'
 alias gla='git grog --all'
 alias gst='git st'
+alias gms='git merge --squash'
 
 alias bxt='xterm -xrm "xterm*faceSize: 14" &'
