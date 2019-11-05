@@ -1,5 +1,6 @@
 # Aliases for default use of some commands
 alias ag='ag --color-match "1;31" --color-path "1;34"'
+alias aga='ag -a --hidden'
 alias print='print -l'
 
 alias miniterm='python3 -m serial.tools.miniterm'
