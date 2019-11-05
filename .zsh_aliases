@@ -22,4 +22,23 @@ function ghc {
   fi
 }
 
+function bak {
+  for file in $@; do
+    mv $file $file.bak
+    if [ $? -eq 0 ]; then
+      echo "Moved '$file' to '$file.bak'"
+    fi
+  done
+}
+
+function unbak {
+  for bakfile in $@; do
+    file=`echo $bakfile | sed -e 's/\.bak$//'`
+    mv $bakfile $file
+    if [ $? -eq 0 ]; then
+      echo "Moved '$bakfile' to '$file'"
+    fi
+  done
+}
+
 alias bxt='xterm -xrm "xterm*faceSize: 14" &'
