@@ -9,5 +9,17 @@ alias gl='git grog'
 alias gla='git grog --all'
 alias gst='git st'
 alias gms='git merge --squash'
+alias gk='gitk &'
+alias gka='gitk --all &'
+
+function ghc {
+  if [ $# -eq 0 ] || [ $1 = '-h' ]; then
+    echo "Usage: $ ghc <GITHUB_ORG/GITHUB_REPO.git> [CLONE_DIR]"
+  else
+    repo=$1
+    shift
+    git clone --recurse-submodules git@github.com:$repo.git $@
+  fi
+}
 
 alias bxt='xterm -xrm "xterm*faceSize: 14" &'
